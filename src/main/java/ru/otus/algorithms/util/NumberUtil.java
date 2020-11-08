@@ -55,4 +55,8 @@ public class NumberUtil {
             System.arraycopy(srcArr, from, destArray, 0, destArray.length);
         return destArray;
     }
+
+    public static int getRandomNumber(int minNumber, int maxNumber) {
+        return (int) ((Math.random() * (maxNumber - minNumber)) + minNumber);
+    }
 }
