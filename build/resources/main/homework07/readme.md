@@ -36,7 +36,7 @@ ru.otus.algorithms.webinar07.homework.Main
 ##### удаление элемента
   Исходники:
   
-   ru.otus.algorithms.webinar07.homework.BinarySearchTree.java
+   ru.otus.algorithms.webinar07.BinarySearchTree.java
    
    Method: remove
    
@@ -55,3 +55,11 @@ ru.otus.algorithms.webinar07.homework.Main
    Оценка: 1 байт
    
  -------------------------------------------------------------------------------------------
+ 
+ #### Расширить класс из 1 части и создать сбалансированное АВЛ-дерево.
+ 
+ Исходники:
+ 
+   ru.otus.algorithms.homework07.AVLTree.java
+    
+ 

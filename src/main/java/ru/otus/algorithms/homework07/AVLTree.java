@@ -40,8 +40,10 @@ public class AVLTree extends BinarySearchTree {
             heightDelta = -nodeRight.getHeight();
         }
         if (heightDelta > 1) {
+            /*-
             System.out.println("\nNot balance, heightDelta = " + heightDelta + ", node = " + root.getValue()
                     + "\nnodeLeft = " + nodeLeft + "\nnodeRight = " + nodeRight + "\n -> do little right turn");
+             */
             Node parent = nodeLeft.getParent();
             Node parentOfParent = parent.getParent();
             if (parentOfParent == null) {
@@ -55,8 +57,10 @@ public class AVLTree extends BinarySearchTree {
             root.setHeight(0);
             recalculateHeight(root);
         } else if (heightDelta < -1) {
+            /*-
             System.out.println("\nNot balance, heightDelta = " + heightDelta + ", node = " + root.getValue()
                     + "\nnodeLeft = " + nodeLeft + "\nnodeRight = " + nodeRight + "\n -> do little left turn");
+             */
             Node parent = nodeRight.getParent();
             Node parentOfParent = parent.getParent();
             if (parentOfParent == null) {

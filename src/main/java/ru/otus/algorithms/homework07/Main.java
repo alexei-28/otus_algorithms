@@ -83,14 +83,12 @@ public class Main {
 
         /////////////////////////////////////////////////////////////////////
         // AVL Tree
-        int[] numberArray = new int[]{15, 7, 3, 5, 25, 9, 8, 12, 6};
+        int[] numberArray = new int[]{15, 7, 3, 5, 25, 9, 8, 12};
         long startDate = System.currentTimeMillis();
         AVLTree avlTree = new AVLTree();
         for (int key : numberArray) {
-            System.out.println("insert_key = " + key);
             root = avlTree.insert(root, key);
         }
-        System.out.println("ROOT:  " + root);
         long duration = DateUtil.getDurationInMills(startDate, System.currentTimeMillis());
         //System.out.println("AVL tree: Success inserted random numbers (count = " + n + ") , duration(mls) = " + duration);
     }
