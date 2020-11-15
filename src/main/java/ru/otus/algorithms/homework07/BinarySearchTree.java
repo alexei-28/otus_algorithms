@@ -152,6 +152,7 @@ public class BinarySearchTree {
             node = searchNode(root.getRight(), key);
         }
         if (node == null) {
+            // better use java.util.Optional
             throw new NodeNotFoundException(key);
         }
         return node;
