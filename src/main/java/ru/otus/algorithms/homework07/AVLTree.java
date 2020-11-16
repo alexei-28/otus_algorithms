@@ -78,7 +78,6 @@ public class AVLTree extends BinarySearchTree {
         rebalance(nodeRight, key);
         return root;
     }
-
     private void recalculateHeight(Node root) {
         if (root == null) {
             return;
