@@ -1,5 +1,7 @@
 package ru.otus.algorithms.homework09;
 
+import java.util.Optional;
+
 public class Main {
 
     public static void main(String... arg) {
@@ -84,6 +86,13 @@ public class Main {
         node15.setKey("abdc");
         node15.setValue(512);
         hashTableChain.put(node15);
+
+        Optional<Node> findNode = hashTableChain.get("abdc");
+        if (findNode.isPresent()) {
+            System.out.println("Success, findNode = " + findNode.get());
+        } else {
+            System.out.println("Not_found, findNode = " + findNode);
+        }
 
     }
 }
