@@ -24,6 +24,10 @@ import java.util.*;
  */
 public class HashTableChain {
     private static final int CHAIN_MAX_LENGTH = 3;
+    /*-
+        Comment:
+        "по науке" "главный массив", это все же массив. ArrayList приводит к сильной потере производительности.
+     */
     private List<LinkedList<Node>> mainList = new ArrayList<>();
 
     public HashTableChain() {
@@ -34,6 +38,12 @@ public class HashTableChain {
     public void put(Node node) {
         System.out.println("");
         int index = getArrayIndex(mainList.size(), node);
+        /*-
+        Comment:
+            тут выполняется обращение к нужному "бакету", который нашли через hachCode, не вижу поиск элемента по eqauls.
+            как это будет работать, если элемент с тем же ключом второй раз положат?
+            Элемент задвоится.
+         */
         LinkedList<Node> chainList = mainList.get(index);
         System.out.println("mainList(" + mainList.size() + "), index = " + index + ", chainList(" + chainList.size() + "), put node = " + node);
         if (chainList.size() < CHAIN_MAX_LENGTH) {
@@ -86,6 +96,12 @@ public class HashTableChain {
         return Optional.empty();
     }
 
+    /*-
+    Comment:
+        я много экспериментировал как такую функцию сделать максимально быстрой.
+        лучшее, что пока удалось: key.hashCode()
+        Встроенная функция работает максимально быстро, в том числе за счет кеширования.
+    */
     private int getArrayIndex(int arraySize, Node node) {
         String key = node.getKey();
         int hashCode = getHashCode(key);
