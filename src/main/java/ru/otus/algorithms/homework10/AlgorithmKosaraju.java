@@ -1,6 +1,5 @@
 package ru.otus.algorithms.homework10;
 
-// not finish
 public class AlgorithmKosaraju {
         /*-
         Пометить v как использованную
