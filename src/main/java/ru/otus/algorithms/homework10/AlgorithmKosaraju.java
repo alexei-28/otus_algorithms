@@ -1,7 +1,7 @@
 package ru.otus.algorithms.homework10;
 
 public class AlgorithmKosaraju {
-        /*-
+    /*-
         Пометить v как использованную
         Положить на стек(v)
         пока​ стек не пуст
