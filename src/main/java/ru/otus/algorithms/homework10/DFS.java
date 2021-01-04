@@ -29,7 +29,6 @@ package ru.otus.algorithms.homework10;
                     если ​ w не использована(не была в стеке) ​ то
                         положить на стек w
         вернуть ​ложь
-     */
 */
 public class DFS {
 
