@@ -32,4 +32,11 @@ package ru.otus.algorithms.homework10;
 */
 public class DFS {
 
+    public void dfsByRecursive() {
+
+    }
+
+    public void dfsByStack() {
+
+    }
 }
