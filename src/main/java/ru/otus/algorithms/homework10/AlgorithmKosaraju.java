@@ -22,24 +22,4 @@ public class AlgorithmKosaraju {
         вернуть ​ложь
      */
 
-    /*-
-        Depth-first search (DFS) visualization: https://www.cs.usfca.edu/~galles/visualization/DFS.html
-        Поиск в глубину.
-        Используется когда:
-        - нужно определить есть ли путь от одной до другой вершины
-        - найти компоненту связанности (все вершины соединены друг с другом)
-        Можно реализовать через рекурсию или через стек.
-     */
-    public void dfs() {
-
-    }
-    
-    /*-
-        Breadth-First Search (BFS) visualization: https://www.cs.usfca.edu/~galles/visualization/BFS.html
-        Если реализовать этот-же алгоритм через очередь, то получим поиск вширь.
-        Поиск вширь позволяет найти кратчайший путь до заданной вершины.
-    */
-    public void bfs() {
-
-    }
 }
