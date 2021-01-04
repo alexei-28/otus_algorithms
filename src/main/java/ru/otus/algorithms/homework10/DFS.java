@@ -11,7 +11,7 @@ package ru.otus.algorithms.homework10;
         Алгоритм(через рекурсию):
         DFS(v)
             used(v) = true;
-            foreach(u belong V)
+            foreach(u смежный V)
                 if !used[u]
                     DFS(u);
 
