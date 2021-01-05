@@ -8,13 +8,6 @@ package ru.otus.algorithms.homework10;
         - найти компоненту связанности (все вершины соединены друг с другом)
         Можно реализовать через рекурсию или через стек.
 
-        Алгоритм(через рекурсию):
-        DFS(v)
-            used(v) = true;
-            foreach(u смежный V)
-                if !used[u]
-                    DFS(u);
-
 
         Алгоритм(через стек):
         Пометить v как использованную
@@ -31,9 +24,17 @@ package ru.otus.algorithms.homework10;
         вернуть ложь
 */
 public class DFS {
-    private int[] array = new int[] {0,1,2,3,4,5,6,7,8,9};
+    private int[] array = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     private boolean[] used = new boolean[array.length];
 
+    /*-
+        Алгоритм(через рекурсию):
+        DFS(v)
+        used(v) = true;
+        foreach(u смежный V)
+           if !used[u]
+             DFS(u);
+    */
     public void dfsByRecursive() {
         System.out.println("dfsByRecursive");
 
