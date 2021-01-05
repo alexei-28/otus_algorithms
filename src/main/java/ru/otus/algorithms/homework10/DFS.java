@@ -48,8 +48,9 @@ public class DFS {
         int pos = list.indexOf(item);
         used[pos] = true;
         for (int index = 0; index < list.size(); index++) {
+            int currentItem = list.get(index);
             if (!used[index]) {
-                dfsByRecursive(list.indexOf(item));
+                dfsByRecursive(currentItem);
             }
         }
     }
