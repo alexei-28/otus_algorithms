@@ -1,8 +1,9 @@
 package ru.otus.algorithms.homework10;
 
 /*-
-        Depth-first search (DFS) visualization: https://www.cs.usfca.edu/~galles/visualization/DFS.html
         Поиск в глубину.
+        Depth-first search (DFS) visualization: https://www.cs.usfca.edu/~galles/visualization/DFS.html
+
         Используется когда:
         - нужно определить есть ли путь от одной до другой вершины
         - найти компоненту связанности (все вершины соединены друг с другом)
@@ -24,8 +25,13 @@ package ru.otus.algorithms.homework10;
         вернуть ложь
 */
 public class DFS {
-    private int[] array = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    private boolean[] used = new boolean[array.length];
+    private final int[] array;
+    private boolean[] used;
+
+    public DFS(int[] array) {
+        this.array = array;
+        used = new boolean[array.length];
+    }
 
     /*-
         Алгоритм(через рекурсию):
@@ -48,5 +54,9 @@ public class DFS {
 
     public void dfsByStack() {
 
+    }
+
+    public boolean[] getUsed() {
+        return used;
     }
 }
