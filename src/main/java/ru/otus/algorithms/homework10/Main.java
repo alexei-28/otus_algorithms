@@ -8,6 +8,5 @@ public class Main {
     public static void  main(String[] args) {
         System.out.println("Homework #10!\nJDK: " + System.getProperty("java.version"));
         DFS dfs = new DFS();
-        dfs.dfsByRecursive();
     }
 }

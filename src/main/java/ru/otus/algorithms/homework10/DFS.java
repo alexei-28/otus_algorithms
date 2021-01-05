@@ -35,9 +35,15 @@ public class DFS {
            if !used[u]
              DFS(u);
     */
-    public void dfsByRecursive() {
-        System.out.println("dfsByRecursive");
-
+    public void dfsByRecursive(int item) {
+        System.out.println("dfsByRecursive: item = " + item);
+        int pos = array[item];
+        used[pos] = true;
+        for (int index = 0; index < array.length; index++) {
+            if (!used[index]) {
+                dfsByRecursive(array[index]);
+            }
+        }
     }
 
     public void dfsByStack() {
