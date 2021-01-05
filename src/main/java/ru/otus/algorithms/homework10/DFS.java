@@ -1,5 +1,7 @@
 package ru.otus.algorithms.homework10;
 
+import java.util.List;
+
 /*-
         Поиск в глубину.
         Depth-first search (DFS) visualization: https://www.cs.usfca.edu/~galles/visualization/DFS.html
@@ -25,12 +27,12 @@ package ru.otus.algorithms.homework10;
         вернуть ложь
 */
 public class DFS {
-    private final int[] array;
+    private final List<Integer> list;
     private boolean[] used;
 
-    public DFS(int[] array) {
-        this.array = array;
-        used = new boolean[array.length];
+    public DFS(List<Integer> list) {
+        this.list = list;
+        used = new boolean[list.size()];
     }
 
     /*-
@@ -43,11 +45,11 @@ public class DFS {
     */
     public void dfsByRecursive(int item) {
         System.out.println("dfsByRecursive: item = " + item);
-        int pos = array[item];
+        int pos = list.indexOf(item);
         used[pos] = true;
-        for (int index = 0; index < array.length; index++) {
+        for (int index = 0; index < list.size(); index++) {
             if (!used[index]) {
-                dfsByRecursive(array[index]);
+                dfsByRecursive(list.indexOf(item));
             }
         }
     }
