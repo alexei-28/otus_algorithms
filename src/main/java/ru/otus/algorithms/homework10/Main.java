@@ -13,7 +13,7 @@ public class Main {
         System.out.println("Homework #10!\nJDK: " + System.getProperty("java.version"));
         List<Integer> list = Arrays.asList(0, 4, 2, 1, 6, 5, 7, 3);
         DFS dfs = new DFS(list);
-        dfs.dfsByRecursive(7);
+        dfs.dfsByRecursive(3);
         boolean[] used = dfs.getUsed();
         System.out.println("used = " + Arrays.toString(used));
     }
