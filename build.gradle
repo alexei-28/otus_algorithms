@@ -10,7 +10,7 @@ repositories {
 
 apply plugin : "java"
 ext {
-    javaMainClass = "ru.otus.algorithms.homework01.Main"
+    javaMainClass = "ru.otus.algorithms.homework07.Main"
 }
 
 application {

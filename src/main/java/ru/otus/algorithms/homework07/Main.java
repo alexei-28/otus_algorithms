@@ -12,6 +12,7 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) {
+        System.out.println("Start homework07");
         System.out.println("Hello, OTUS Algorithms!\nJDK: " + System.getProperty("java.version"));
         long n = 1;
         int minNumber = 1;
