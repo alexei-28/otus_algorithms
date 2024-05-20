@@ -15,7 +15,7 @@ public class Main {
         String pathBase =  TEST_FOLDER_BASE_PATH + File.separator + "homework01";
 
         //Дана строка символов. Вычислить её длину.
-        //Tester tester = new Tester(new File(pathBase + File.separator + "0.String"), new StringLength());
+        Tester tester = new Tester(new File(pathBase + File.separator + "0.String"), new StringLength());
 
         //HarryPotterIncantations harryPotterIncantations = new HarryPotterIncantations();
         //Tester tester = new Tester(new File(pathBase + File.separator + "1.Tickets"), new LuckyTickets());

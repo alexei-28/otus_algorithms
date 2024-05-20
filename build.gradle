@@ -1,15 +1,69 @@
 plugins {
+    id "application"
     id 'java'
+    id "io.spring.dependency-management" version "1.0.10.RELEASE"
 }
-
-group 'ru.otus.algorithms'
-version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
+apply plugin : "java"
+ext {
+    javaMainClass = "ru.otus.algorithms.homework01.Main"
+}
 
-    testCompile 'org.junit.jupiter:junit-jupiter-engine:5.6.2'
+application {
+    mainClassName = javaMainClass
+}
+
+
+allprojects {
+    group "ru.otus.algorithms"
+
+    //sourceCompatibility = JavaVersion.VERSION_1_8
+    //targetCompatibility = JavaVersion.VERSION_1_8
+
+    repositories {
+        mavenCentral()
+    }
+
+    apply plugin: "io.spring.dependency-management"
+    dependencyManagement {
+        dependencies {
+            imports {
+                /*-
+                    To solve version mismatch issue, you can use the concept of a “bill of materials” (BOM) dependency.
+                    A BOM dependency keep track of version numbers and ensure that all
+                    dependencies (both direct and transitive) are at the same version.
+                    Use "BOM" file from Spring
+                    Spring BOM: https://repo1.maven.org/maven2/org/springframework/boot/spring-boot-dependencies/3.0.5/spring-boot-dependencies-3.0.5.pom
+                 */
+                mavenBom("org.springframework.boot:spring-boot-dependencies:3.0.5")
+            }
+            // If lib is not exist in BOM file than add it manually (e.g. "com.google.guava")
+            //dependency("com.google.guava:guava:${guavaVersion}")
+        }
+    }
+}
+
+
+dependencies {
+/*-
+  Если явно не прописано, то версия возьмется из BOM-файла (can see by custom task "managedVersions" in parent).
+  Если проект не многомодульный и не содержит стороннего BOM то нужно самому прописывать версии.
+  Или если библиотеки нет в BOM файле.
+  If lib is not exist in BOM file than add it manually (e.g. "com.google.guava")
+*/
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    //testImplementation 'junit:junit:4.12'
+}
+
+//print versions from BOM
+task managedVersions {
+    doLast {
+        dependencyManagement.managedVersions.each {
+            println it
+        }
+    }
 }
